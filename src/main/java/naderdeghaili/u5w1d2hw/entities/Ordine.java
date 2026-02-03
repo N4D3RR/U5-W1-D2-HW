@@ -1,6 +1,7 @@
 package naderdeghaili.u5w1d2hw.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ordine {
@@ -22,6 +23,7 @@ public class Ordine {
         this.prezzoCoperto = prezzoCoperto;
         this.oraOrdine = LocalDateTime.now();
         this.stato = StatoOrdine.IN_CORSO;
+        this.elementiOrdine = new ArrayList<>();
 
         tavolo.occupaTavolo();
     }
@@ -37,7 +39,7 @@ public class Ordine {
 
     @Override
     public String toString() {
-        return "Ordine n. " + numeroOrdine +
+        return "Ordine: " + numeroOrdine +
                 "\nTavolo: " + tavolo.getNumero() +
                 "\nStato: " + stato +
                 "\nCoperti: " + coperti +

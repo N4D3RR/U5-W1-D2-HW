@@ -4,12 +4,15 @@ import naderdeghaili.u5w1d2hw.entities.Bevanda;
 import naderdeghaili.u5w1d2hw.entities.Menu;
 import naderdeghaili.u5w1d2hw.entities.Pizza;
 import naderdeghaili.u5w1d2hw.entities.Topping;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class MenuConfig {
 
     @Bean
@@ -74,6 +77,11 @@ public class MenuConfig {
     @Bean
     public Menu menu(List<Pizza> p, List<Bevanda> b, List<Topping> t) {
         return new Menu(p, b, t);
+    }
+
+    @Bean
+    public Double getPrezzoCoperto(@Value("${prezzo.coperto}") Double prezzoCoperto) {
+        return prezzoCoperto;
     }
 
 

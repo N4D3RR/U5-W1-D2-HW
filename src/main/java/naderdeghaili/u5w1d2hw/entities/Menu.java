@@ -14,7 +14,7 @@ public class Menu {
     }
 
     public void printMenu() {
-        System.out.println("--- MENU ---");
+        System.out.println("\n--- MENU ---");
         System.out.println(" \nPIZZE: ");
         pizze.forEach(p -> System.out.println(" - " + p));
 
@@ -23,5 +23,18 @@ public class Menu {
 
         System.out.println(" \nTOPPINGS: ");
         toppings.forEach(t -> System.out.println(" - " + t));
+    }
+
+
+    public List<Pizza> getPizze() {
+        return pizze;
+    }
+
+    public List<Bevanda> getBevande() {
+        return bevande;
+    }
+
+    public List<Topping> getToppings() {
+        return toppings;
     }
 }
